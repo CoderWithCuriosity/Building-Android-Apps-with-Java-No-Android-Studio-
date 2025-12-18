@@ -73,7 +73,6 @@ C:\Android
 
 ---
 
-Absolutely! I can expand that section to include **Windows-specific ways to set environment variables**, including both **temporary (CMD/PowerShell)** and **permanent via System Settings**, so it’s clear and beginner-friendly. Here’s the updated **Step 2.2** section for your `README.md`:
 
 ---
 
