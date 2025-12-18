@@ -46,8 +46,8 @@ javac -version
 
 ❌ If not found:
 
-* Install **JDK 11** or **JDK 17**.
-* After installing, **re-open CMD/PowerShell**.
+- Install **JDK 11** or **JDK 17**.
+- After installing, **re-open CMD/PowerShell**.
 
 ---
 
@@ -88,7 +88,7 @@ You need to tell Windows where your Android SDK is located and add `platform-too
 
 #### **Option 1: Temporary (Command-Line Only)**
 
-* Opens only for the current CMD/PowerShell session:
+- Opens only for the current CMD/PowerShell session:
 
 ```powershell
 set ANDROID_HOME=C:\Android
@@ -101,7 +101,7 @@ set PATH=%PATH%;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\cmdline-tools\lates
 
 #### **Option 2: Permanent via Command-Line**
 
-* Adds environment variables permanently for Windows:
+- Adds environment variables permanently for Windows:
 
 ```powershell
 setx ANDROID_HOME "C:\Android"
@@ -118,13 +118,14 @@ setx PATH "%PATH%;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\cmdline-tools\lat
 2. In **System Properties** → click **Environment Variables…**.
 3. Under **User variables** (or **System variables**):
 
-   * Click **New…** → add `ANDROID_HOME` → value `C:\Android`
-   * Find `Path` → click **Edit…** → **New** → add:
+   - Click **New…** → add `ANDROID_HOME` → value `C:\Android`
+   - Find `Path` → click **Edit…** → **New** → add:
 
      ```
      %ANDROID_HOME%\platform-tools
      %ANDROID_HOME%\cmdline-tools\latest\bin
      ```
+
 4. Click **OK** on all windows.
 5. Open a **new terminal** and verify:
 
@@ -308,10 +309,10 @@ gradle wrapper
 gradle init
 ```
 
-* Type: **Basic**
-* Language: **Groovy**
-* Project name: `android`
-* Generate build scans: **no**
+- Type: **Basic**
+- Language: **Groovy**
+- Project name: `android`
+- Generate build scans: **no**
 
 ✅ This will create:
 
@@ -332,13 +333,13 @@ gradle/
 .\gradlew assembleDebug
 ```
 
-* If using PowerShell and command not found, prepend `.\`:
+- If using PowerShell and command not found, prepend `.\`:
 
 ```powershell
 .\gradlew :app:assembleDebug
 ```
 
-* Verify tasks:
+- Verify tasks:
 
 ```powershell
 .\gradlew :app:tasks --all
@@ -389,9 +390,9 @@ adb install app-debug.apk
 
 ## Next Steps
 
-* Clean up warnings: Remove `package="..."` from `AndroidManifest.xml`.
-* Automate debug installs: Use `.\gradlew :app:installDebug --continuous` for auto-install on file changes.
-* Explore release signing, ProGuard, and resource management.
+- Clean up warnings: Remove `package="..."` from `AndroidManifest.xml`.
+- Automate debug installs: Use `.\gradlew :app:installDebug --continuous` for auto-install on file changes.
+- Explore release signing, ProGuard, and resource management.
 
 ---
 
@@ -401,5 +402,26 @@ adb install app-debug.apk
 
 I can also create an **extra section for “Live Debug / Hot Reload” with PowerShell automation** so your changes auto-build and install on a connected device — it will feel like instant preview without Android Studio.
 
-#   B u i l d i n g - A n d r o i d - A p p s - w i t h - J a v a - N o - A n d r o i d - S t u d i o -  
- 
+Please note the version of java i am using is:
+PS C:\Users\USER\Desktop\Projects\android> java -version
+openjdk version "17.0.13" 2024-10-15
+OpenJDK Runtime Environment OpenLogic-OpenJDK (build 17.0.13+11-adhoc..jdk17u)
+OpenJDK 64-Bit Server VM OpenLogic-OpenJDK (build 17.0.13+11-adhoc..jdk17u, mixed mode, sharing)
+
+Also the version of gradle i am using is:
+
+PS C:\Users\USER\Desktop\Projects\android> gradle -version
+
+---
+
+## Gradle 9.2.1
+
+Build time: 2025-11-17 13:40:48 UTC
+Revision: 30ecdc708db275e8f8769ea0620f6dd919a58f76
+
+Kotlin: 2.2.20
+Groovy: 4.0.28
+Ant: Apache Ant(TM) version 1.10.15 compiled on August 25 2024
+Launcher JVM: 17.0.13 (OpenLogic 17.0.13+11-adhoc..jdk17u)
+Daemon JVM: C:\Program Files\OpenLogic\jdk-17.0.13.11-hotspot (no JDK specified, using current Java home)
+OS: Windows 11 10.0 amd64
